@@ -2,6 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Minimal Brightness Button</title>
+  <style>
+    /* Default Light Mode */
+    body {
+      background-color: #fdfdfd;
+      color: #222;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #1a1a2e;
+      color: #f1f1f1;
+    }
+
+    /* Brightness Button */
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      font-size: 26px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: #ff6f61; /* Unique coral color for light mode */
+    }
+
+    /* Hover effect */
+    #theme-toggle:hover {
+      transform: scale(1.2) rotate(15deg);
+    }
+
+    /* Dark Mode Button Color */
+    .dark-mode #theme-toggle {
+      color: #6c63ff; /* Unique violet shade for dark mode */
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Minimal Brightness Button -->
+  <button id="theme-toggle"><span>🔆</span></button>
+
+  <h1 style="color: #38bdf8;">Portfolio Website </h1>
+
+  <script>
+    const button = document.getElementById("theme-toggle");
+    const icon = button.querySelector("span");
+    const body = document.body;
+
+    button.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+
+      // Icon change with smooth animation
+      button.style.transform = "scale(0.8)";
+      setTimeout(() => {
+        if (body.classList.contains("dark-mode")) {
+          icon.textContent = "🌙";  // Dark mode
+        } else {
+          icon.textContent = "🔆";  // Light mode
+        }
+        button.style.transform = "scale(1)";
+      }, 200);
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Faizan Malik - Portfolio</title>
   <style>
@@ -172,6 +249,7 @@
 </body>
 
 </html>
+
 
 
 
